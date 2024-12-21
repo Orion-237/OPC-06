@@ -1,1 +1,30 @@
+# Code Review - Projet OPC-05
 
+
+## Forces du Code
+
+- Les fichiers sont bien organisés par fonctionnalités (utils, entities, ui).
+- Les exceptions contiennent des messages explicites pour guider l’utilisateur.
+- Les méthodes des classes respectent le principe d’encapsulation.
+- Les validations (ex. `verifierFormatHeure`) sont bien isolées dans des méthodes dédiées.
+- Gestion efficace des erreurs d’entrées utilisateur (ex. format d’heure invalide).
+
+--- 
+
+## Faiblesses du Code
+
+- `creerListeMedecins` ne vérifie pas si `nb` dépasse la taille des listes `noms` ou `specialites`.
+- Mauvaise gestion du temps
+- Les entrées utilisateur (noms, jours, heures) pourraient être nettoyées ou validées davantage.
+- Aucune protection contre des attaques potentielles comme les injections ou entrées malveillantes.
+
+---
+
+## Propositions d'Amélioration
+
+- Remplacer for (i in 0..<nb) par for (i in 0 until nb).
+- Améliorer la gestion du temps
+- Nettoyer les entrées utilisateur avec `.trim()` et `.lowercase()` par exemple.
+- Valider toutes les entrées utilisateur pour éviter les injections.
+
+---
