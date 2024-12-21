@@ -1,1 +1,30 @@
+# Code Review - Projet OPC-05
 
+---
+
+## Forces du Code
+
+### Lisibilité
+- Les fichiers sont bien organisés par fonctionnalités (utils, entities, ui).
+- Les classes `Medecin` et `RendezVous` utilisent judicieusement `toString` et `data class` pour une représentation lisible.
+
+### Maintenabilité
+- Les méthodes des classes respectent le principe d’encapsulation.
+- Les validations (ex. `verifierFormatHeure`) sont bien isolées dans des méthodes dédiées.
+
+### Fonctionnalité
+- Gestion efficace des erreurs d’entrées utilisateur (ex. format d’heure invalide).
+
+---
+
+## Faiblesses du Code
+- `creerListeMedecins` ne vérifie pas si `nb` dépasse la taille des listes `noms` ou `specialites`.
+- Mauvaise gestion du temps
+
+---
+
+## Propositions d'Amélioration
+- Amélioration de la gestion du temps
+- Ajouter une validation pour que `nb` dans `creerListeMedecins` ne dépasse pas la taille des listes `noms` et `specialites`.
+
+---
